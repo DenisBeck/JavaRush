@@ -18,8 +18,8 @@ public class Solution {
         File resultFileAbsolutePath = new File(args[1]); //Файл с контекстом всех файлом <50
         File allFilesContent = new File(resultFileAbsolutePath.getParent()+"/allFilesContent.txt");
         FileUtils.renameFile(resultFileAbsolutePath, allFilesContent);
-        //хз верно ли указывать в конструкторе "allFilesContent", а не "resultFileAbsolutePath"
-        //но валидатор принимает, а во втором варианте - нет
+
+
         try (FileOutputStream fos = new FileOutputStream(allFilesContent)) {
             deepSearch(path);
             TreeMap<String, File> fileAndPath = new TreeMap<>();
